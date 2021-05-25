@@ -1,0 +1,165 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html  >
+<head>
+  <!-- Site made with Mobirise Website Builder v4.12.4, https://mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v4.12.4, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="/static/main/assets/images/ant-1.png" type="image/x-icon">
+  <meta name="description" content="Web Site Creator Description">
+
+
+  <title>Analysis</title>
+  <link rel="stylesheet" href="/static/main/assets/web//static/main/assets/mobirise-icons/mobirise-icons.css">
+  <link rel="stylesheet" href="/static/main/assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/main/assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="/static/main/assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="/static/main/assets/tether/tether.min.css">
+  <link rel="stylesheet" href="/static/main/assets/dropdown/css/style.css">
+  <link rel="stylesheet" href="/static/main/assets/theme/css/style.css">
+  <link rel="preload" as="style" href="/static/main/assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="/static/main/assets/mobirise/css/mbr-additional.css" type="text/css">
+
+
+
+</head>
+<body>
+  <section class="menu cid-sy0zTxd0AQ" once="menu" id="menu1-9">
+
+
+    <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+        <div class="menu-logo">
+            <div class="navbar-brand">
+                <span class="navbar-logo">
+                    <a href="../">
+                         <img src="/static/main/assets/images/ant-1.png" alt="Mobirise" title="" style="height: 3.8rem;">
+                    </a>
+                </span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="../">
+                        Gazua</a></span>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true"><li class="nav-item">
+                    <a class="nav-link link text-white display-4" href="../resource">
+                        <span class="mbri-home mbr-iconfont mbr-iconfont-btn"></span>
+                        Resource
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link text-white display-4" href="../aboutus"><span class="mbri-search mbr-iconfont mbr-iconfont-btn"></span>
+
+                        About Us
+                    </a>
+                </li></ul>
+            <div class="navbar-buttons mbr-section-btn"><a class="btn btn-sm btn-primary display-4" href="ml_analysis.html"><span class="mbri-success mbr-iconfont mbr-iconfont-btn"></span>
+
+                    Try It Now!
+                </a></div>
+        </div>
+    </nav>
+</section>
+
+    <section class="counters3 counters cid-sy0AacDi98" id="counters3-2">
+    <div class="container pt-4 mt-2">
+
+    <form action="{% url 'gazua:predict_analysis' %}" method="POST">
+      {% csrf_token %}
+
+      <label for="Revenue">매출액(억)</label>
+      <input type="text" id="Revenue" name="revenue" placeholder="ex) 1965.20">
+      <br>
+
+      <label for="Total_assets">총자산 증가율</label>
+      <input type="text" id="Total_assets" name="total_assets" placeholder="ex) 0.26">
+      <br>
+
+      <label for="Tangible_assets">유형자산 증가율</label>
+      <input type="text" id="Tangible_assets" name="tangible_assets" placeholder="ex) 0.20">
+      <br>
+
+      <label for="Current_assets">유동자산 증가율</label>
+      <input type="text" id="Current_assets" name="current_assets" placeholder="ex) 1.4">
+      <br>
+
+      <label for="Inventories">재고자산 증가율</label>
+      <input type="text" id="Inventories" name="inventories" placeholder="ex) 0.94">
+      <br>
+
+      <label for="Growth_rate_of_revenue">매출액 증가율</label>
+      <input type="text" id="Growth_rate_of_revenue" name="growth_rate_of_revenue" placeholder="ex) 0.01">
+      <br>
+
+      <label for="Current_ratio">유동 비율</label>
+      <input type="text" id="Current_ratio" name="current_ratio" placeholder="ex) 0.41">
+      <br>
+
+      <label for="Quick_ratio">당좌 비율</label>
+      <input type="text" id="Quick_ratio" name="quick_ratio" placeholder="ex) 0.37">
+      <br>
+
+      <label for="Dept_ratio">부채 비율</label>
+      <input type="text" id="Dept_ratio" name="dept_ratio" placeholder="ex) 1.03">
+      <br>
+
+      <label for="Capital_adequacy">자기자본 비율</label>
+      <input type="text" id="Capital_adequacy" name="capital_adequacy" placeholder="ex) 0.47">
+      <br>
+
+      <label for="Operating_margin">영업이익률</label>
+      <input type="text" id="Operating_margin" name="operating_margin" placeholder="ex) 0.12">
+      <br>
+
+      <label for="Return_on_equity">자기자본이익률</label>
+      <input type="text" id="Return_on_equity" name="return_on_equity" placeholder="ex) 0.03">
+      <br>
+
+      <label for="Sales_per_person">종사자 1인당 매출액(억)</label>
+      <input type="text" id="Sales_per_person" name="sales_per_person" placeholder="ex) 9.05">
+      <br>
+
+      <label for="Fixed_asset_turnover">고정자산 회전율</label>
+      <input type="text" id="Fixed_asset_turnover" name="fixed_asset_turnover" placeholder="ex) 0.37">
+      <br>
+
+      <label for="Price_earnings_ratio">PER</label>
+      <input type="text" id="Price_earnings_ratio" name="price_earnings_ratio" placeholder="ex) 9.05">
+      <br>
+
+      <label for="Price_bookvalue_ratio">PBR</label>
+      <input type="text" id="Price_bookvalue_ratio" name="price_bookvalue_ratio" placeholder="ex) 0.37">
+      <br>
+
+      <button type="submit">Predict!</button>
+
+    </form>
+
+    <p><a href="{% url 'gazua:first_view' %}">Return to home</a></p>
+
+  </div>
+</section>
+
+
+  <section class="engine"><a href="https://mobirise.info/l">free site templates</a></section><script src="/static/main/assets/web//static/main/assets/jquery/jquery.min.js"></script>
+  <script src="/static/main/assets/popper/popper.min.js"></script>
+  <script src="/static/main/assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="/static/main/assets/tether/tether.min.js"></script>
+  <script src="/static/main/assets/smoothscroll/smooth-scroll.js"></script>
+  <script src="/static/main/assets/dropdown/js/nav-dropdown.js"></script>
+  <script src="/static/main/assets/dropdown/js/navbar-dropdown.js"></script>
+  <script src="/static/main/assets/touchswipe/jquery.touch-swipe.min.js"></script>
+  <script src="/static/main/assets/theme/js/script.js"></script>
+
+
+</body>
+</html>
